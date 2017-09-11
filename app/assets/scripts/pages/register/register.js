@@ -1,5 +1,5 @@
-function gabriel() {
+function test() {
 	return 'test';
 }
 
-gabriel();
+test();

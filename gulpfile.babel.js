@@ -200,7 +200,7 @@ gulp.task('serve', ['default'], () => {
     // Browser automatically opening
     open: false,
     proxy: 'dev.helpti.com',
-    baseDir: '/build'
+    baseDir: '/'
   });
 
   // Application
