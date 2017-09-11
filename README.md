@@ -5,7 +5,9 @@
 
 #### Windows
 [Download Git for Windows](https://git-scm.com/download/win)
+
 [Download XAMPP here](https://www.apachefriends.org/pt_br/index.html)
+
 [Download Node.js here](https://nodejs.org/dist/v6.11.3/node-v6.11.3-x86.msi)
 
 Do all the downloads and install.
