@@ -1,7 +1,7 @@
 /**
  *
- *  Super Muffato v8
- *  Copyright 2015 Muffato. All rights reserved.
+ *  HelpTI
+ *  Copyright 2015 HelpTI. All rights reserved.
  *
  *  Licensed under the Apache License, Version 2.0 (the "License");
  *  you may not use this file except in compliance with the License.
@@ -77,7 +77,7 @@ var styleStats = {
 // Lint JavaScript
 gulp.task('jshint', () => {
   return gulp.src([
-    'app/assets/scripts/**/*.js',
+    'app/assets/scripts/pages/**/*.js',
   ])
     .pipe(reload({stream: true, once: true}))
     .pipe($.jshint())
@@ -137,73 +137,36 @@ gulp.task('styles', () => {
     'app/assets/styles/**/*.scss',
     'guide/assets/styles/**/*.scss'
   ])
-    //.pipe($.sourcemaps.init())
     .pipe($.sass({
       precision: 10
     }).on('error', $.sass.logError))
     .pipe($.autoprefixer(AUTOPREFIXER_BROWSERS))
-    //.pipe($.sourcemaps.write())
     .pipe($.rename({dirname: '/'})) // remove subfolders
-    .pipe(gulp.dest('arquivos'))
 
     // Concatenate and minify styles
     .pipe($.if('*.css', $.groupCssMediaQueries()))
     .pipe($.if('*.css', $.minifyCss()))
-    //.pipe($.sourcemaps.write('.'))
     .pipe(gulp.dest('arquivos/styles/'))
     .pipe($.size({title: 'styles'}))
-    //.pipe($.if(/supermuffato-v8.css/i, $.rename('dev-supermuffato-v8.css')))
-    //.pipe(gulp.dest('arquivos/'));
 });
 
 
-// Bootstrap plugins
+// Materialize plugins
 gulp.task('materialize-scripts', () => {
   return gulp.src([
-      './app/assets/scripts/materialize/initial.js',
-      './app/assets/scripts/materialize/jquery.easing.1.4.js',
-      './app/assets/scripts/materialize/animation.js',
-      './app/assets/scripts/materialize/velocity.min.js',
-      './app/assets/scripts/materialize/hammer.min.js',
-      './app/assets/scripts/materialize/jquery.hammer.js',
-      './app/assets/scripts/materialize/global.js',
-      './app/assets/scripts/materialize/collapsible.js',
-      './app/assets/scripts/materialize/dropdown.js',
-      './app/assets/scripts/materialize/modal.js',
-      './app/assets/scripts/materialize/materialbox.js',
-      './app/assets/scripts/materialize/parallax.js',
-      './app/assets/scripts/materialize/tabs.js',
-      './app/assets/scripts/materialize/tooltip.js',
-      './app/assets/scripts/materialize/waves.js',
-      './app/assets/scripts/materialize/toasts.js',
-      './app/assets/scripts/materialize/sideNav.js',
-      './app/assets/scripts/materialize/scrollspy.js',
-      './app/assets/scripts/materialize/forms.js',
-      './app/assets/scripts/materialize/slider.js',
-      './app/assets/scripts/materialize/cards.js',
-      './app/assets/scripts/materialize/chips.js',
-      './app/assets/scripts/materialize/pushpin.js',
-      './app/assets/scripts/materialize/buttons.js',
-      './app/assets/scripts/materialize/transitions.js',
-      './app/assets/scripts/materialize/scrollFire.js',
-      './app/assets/scripts/materialize/date_picker/picker.js',
-      './app/assets/scripts/materialize/date_picker/picker.date.js',
-      './app/assets/scripts/materialize/date_picker/picker.time.js',
-      './app/assets/scripts/materialize/character_counter.js',
-      './app/assets/scripts/materialize/carousel.js',
-      './app/assets/scripts/materialize/tapTarget.js'
+      './app/assets/scripts/vendor/materialize/materialize.min.js',
   ])
     .pipe($.concat('materialize.js'))
     .pipe($.uglify({preserveComments: 'some'}))
     // Output files
-    .pipe($.if(/sm-v8-bootstrap.js/i, gulp.dest('arquivos/scripts')))
+    .pipe(gulp.dest('arquivos/scripts/vendor'))
     .pipe($.size({title: 'materialize-scripts'}));
 });
 
-// Super Muffato V8 Scripts
+// HelpTI Scripts
 gulp.task('scripts', () => {
   return gulp.src([
-    './app/assets/scripts/*'
+    './app/assets/scripts/pages/**/*.js'
   ])
     .pipe($.uglify({preserveComments: 'some'}))
     // Output files
