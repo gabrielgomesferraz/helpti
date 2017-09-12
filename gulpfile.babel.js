@@ -111,7 +111,7 @@ gulp.task('svg', () => {
 // Copy web fonts to arquivos
 gulp.task('fonts', () => {
   return gulp.src([
-    'app/assets/fonts/**/*.{ttf,woff,eot,svg}',
+    'app/assets/fonts/**/*.{ttf,woff,wolff2,eot,svg}',
   ])
     .pipe($.rename({dirname: '/'})) // remove subfolders
     .pipe(gulp.dest('arquivos/fonts/'))
@@ -135,7 +135,6 @@ gulp.task('styles', () => {
   // For best performance, don't add Sass partials to `gulp.src`
   return gulp.src([
     'app/assets/styles/**/*.scss',
-    'guide/assets/styles/**/*.scss'
   ])
     .pipe($.sass({
       precision: 10
@@ -150,17 +149,21 @@ gulp.task('styles', () => {
     .pipe($.size({title: 'styles'}))
 });
 
-
-// Materialize plugins
-gulp.task('materialize-scripts', () => {
+// Bootstrap plugins
+gulp.task('bootstrap-scripts', () => {
   return gulp.src([
-      './app/assets/scripts/vendor/materialize/materialize.min.js',
+    './app/assets/scripts/vendor/bootstrap/transition.js',
+    './app/assets/scripts/vendor/bootstrap/alert.js',
+    './app/assets/scripts/vendor/bootstrap/collapse.js',
+    './app/assets/scripts/vendor/bootstrap/dropdown.js',
+    './app/assets/scripts/vendor/bootstrap/modal.js',
+    './app/assets/scripts/vendor/bootstrap/tab.js'
   ])
-    .pipe($.concat('materialize.js'))
+    .pipe($.concat('bootstrap.js'))
     .pipe($.uglify({preserveComments: 'some'}))
     // Output files
     .pipe(gulp.dest('arquivos/scripts/vendor'))
-    .pipe($.size({title: 'materialize-scripts'}));
+    .pipe($.size({title: 'bootstrap-scripts'}));
 });
 
 // HelpTI Scripts
@@ -216,7 +219,7 @@ gulp.task('serve', ['default'], () => {
 gulp.task('default', ['clean'], cb => {
   runSequence(
     'styles',
-    ['jshint', 'php', 'materialize-scripts', 'scripts', 'svg', 'images', 'fonts'],
+    ['jshint', 'php', 'bootstrap-scripts', 'scripts', 'svg', 'images', 'fonts'],
     cb
   );
 });

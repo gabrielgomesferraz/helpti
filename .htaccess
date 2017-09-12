@@ -2,5 +2,7 @@
   RewriteEngine On
 
   # Página de login
-  RewriteRule ^cadastro/?$ /app/pages/register/index.php [NC,L]
+  RewriteRule ^cadastro/?$ /build/pages/register/index.php [NC,L]
+  RewriteRule ^login/?$ /build/pages/login/index.php [NC,L]
+  RewriteRule ^esqueci-minha-senha/?$ /build/pages/forgot-my-password/index.php [NC,L]
 </IfModule>
