@@ -1,1 +1,1 @@
-function gabriel(){return"test"}gabriel();
+function test(){return"test"}test();

@@ -10,6 +10,8 @@
 
 [Download Node.js here](https://nodejs.org/dist/v6.11.3/node-v6.11.3-x86.msi)
 
+[Create virtual hosts](https://www.youtube.com/watch?v=Tn99kDhGGgc)
+
 Do all the downloads and install.
 Open the git terminal, called git bash, and run the command below inside folder C:\xampp\htdocs of XAMPP. 
 ```sh
