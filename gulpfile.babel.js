@@ -111,7 +111,7 @@ gulp.task('svg', () => {
 // Copy web fonts to arquivos
 gulp.task('fonts', () => {
   return gulp.src([
-    'app/assets/fonts/**/*.{ttf,woff,wolff2,eot,svg}',
+    'app/assets/fonts/**/*.{ttf,woff,woff2,eot,svg}',
   ])
     .pipe($.rename({dirname: '/'})) // remove subfolders
     .pipe(gulp.dest('arquivos/fonts/'))

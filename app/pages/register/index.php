@@ -1,5 +1,3 @@
-<?php define('__ROOT__', dirname(__FILE__)); ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
