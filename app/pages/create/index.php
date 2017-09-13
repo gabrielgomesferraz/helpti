@@ -4,9 +4,9 @@
 	<meta charset="UTF-8">
 	<title>HelpTI</title>
 	<link rel="stylesheet" href="/arquivos/styles/helpti.css">
-	<link rel="stylesheet" href="/arquivos/styles/home.css">
+	<link rel="stylesheet" href="/arquivos/styles/create.css">
 </head>
-<body class="home">
+<body class="create">
     <div class="container-fluid">
 		<div class="row">
 			<nav class="navbar navbar-default">
@@ -46,56 +46,28 @@
 			  </div><!-- /.container-fluid -->
 			</nav>
 
-			<div class="col-xs-12 col-sm-8 col-sm-offset-2">
-				<div class="list-content-home">						
-					<div class="form-group">
-						<h3 class="title-list-called">Lista de Chamados</h3>
-					</div>
-					<div class="table-responsive">
-						<table class="table table-bordered">
-							<thead> 
-								<tr> 
-									<th>#</th> 
-									<th>Titulo</th>
-									<th>Departamento</th>
-									<th>Usuário</th>
-									<th>Data de Atualização</th>
-									<th>Editar</th>
-									<th>Excluir</th>
-								</tr> 
-							</thead> 
-							<tbody> 
-								<tr> 
-									<th scope="row">1</th> 
-									<td>Test</td> 
-									<td>Marketing</td> 
-									<td>Usuário 1</td>
-									<td>13/09/2017</td>
-									<td><a class="editar" href=""><span class="glyphicon glyphicon-edit"></span></a></td>
-									<td><a class="remover" href=""><span class="glyphicon glyphicon-remove"></span></a></td>
-								</tr> 
-								<tr> 
-									<th scope="row">2</th> 
-									<td>Test1</td> 
-									<td>Financeiro</td> 
-									<td>Usuário 2</td>
-									<td>13/09/2017</td>
-									<td><a class="editar" href=""><span class="glyphicon glyphicon-edit"></span></a></td>
-									<td><a class="remover" href=""><span class="glyphicon glyphicon-remove"></span></a></td>
-								</tr> 
-								<tr> 
-									<th scope="row">3</th> 
-									<td>Test2</td> 
-									<td>Comercial</td> 
-									<td>Usuário 3</td>
-									<td>13/09/2017</td>
-									<td><a class="editar" href=""><span class="glyphicon glyphicon-edit"></span></a></td>
-									<td><a class="remover" href=""><span class="glyphicon glyphicon-remove"></span></a></td>
-								</tr>
-							</tbody> 
-						</table>
-					</div>
-					<button type="submit" class="btn btn-primary btn-lg btn-block create-called">Solicitar</button>
+			<div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-6 col-md-offset-3">
+				<div class="content-create">
+					<form class="form-register">
+						<div class="form-group">
+							<h3 class="title-called">Solicitar</h3>
+						</div>
+						<div class="form-group">
+					    	<input type="title-called" class="form-control input-lg" id="title-clled" aria-describedby="titleCalledHelp" placeholder="Titulo">
+						</div>
+						<div class="form-group">
+				    		<select class="form-control input-lg" id="department" name="department">
+				    			<option value="-1">Selecione um departamento</option>
+						    	<option>Marketing</option>
+						    	<option>Comercial</option>
+						    	<option>Financeiro</option>
+							</select>
+					  	</div>
+					  	<div class="form-group">
+					  		<textarea class="form-control" rows="5" id="description" placeholder="Descreva o problema."></textarea>
+					  	</div>
+					  	<button type="submit" class="btn btn-primary btn-lg btn-send">Enviar chamado</button>
+					</form>
 				</div>
 			</div>
 		</div>
@@ -103,7 +75,7 @@
 
 
   <footer class="footer">
-  	<?php require_once("common/scripts-footer.php");  ?>
+  	<?php require_once("../common/scripts-footer.php");  ?>
   </footer>
 </body>
 </html>

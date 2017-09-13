@@ -5,5 +5,6 @@
   RewriteRule ^cadastro/?$ /build/pages/register/index.php [NC,L]
   RewriteRule ^login/?$ /build/pages/login/index.php [NC,L]
   RewriteRule ^esqueci-minha-senha/?$ /build/pages/forgot-my-password/index.php [NC,L]
+  RewriteRule ^criar-chamado/?$ /build/pages/create/index.php [NC,L]
   RewriteRule ^/?$ /build/pages/index.php [NC,L]
 </IfModule>
