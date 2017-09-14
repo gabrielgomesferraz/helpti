@@ -95,7 +95,7 @@
 							</tbody> 
 						</table>
 					</div>
-					<button type="submit" class="btn btn-primary btn-lg btn-block create-called">Solicitar</button>
+					<a href="/criar-chamado" class="btn btn-primary btn-lg btn-block create-called">Solicitar</a>
 				</div>
 			</div>
 		</div>

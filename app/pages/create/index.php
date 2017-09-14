@@ -47,7 +47,7 @@
 			</nav>
 
 			<div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-6 col-md-offset-3">
-				<div class="content-create">
+				<div class="list-content-create">
 					<form class="form-register">
 						<div class="form-group">
 							<h3 class="title-called">Solicitar</h3>

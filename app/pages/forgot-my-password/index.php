@@ -9,6 +9,7 @@
 <body class="forgot-my-password">
     <div class="container">
       	<div class="row">
+      		<h1 class="title-helpti text-center">HelpTI</h1>
 	      	<form class="form-login col-xs-12 col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4">
 	      	  <label for="" class="title-login">Esqueci minha senha</label>
 			  <div class="form-group">

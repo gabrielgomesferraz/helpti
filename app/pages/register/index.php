@@ -9,6 +9,7 @@
 <body class="register">
     <div class="container">
       	<div class="row">
+      		<h1 class="title-helpti text-center">HelpTI</h1>
 	      	<form class="form-register col-xs-12 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
 	      	  <label for="" class="title-register">Crie sua conta</label>
 	      	  <div class="form-group">
