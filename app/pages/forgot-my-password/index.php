@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Esqueci minha senha</title>
+	<title>HelpTI - Esqueci minha senha</title>
 	<link rel="stylesheet" href="/arquivos/styles/helpti.css">
 	<link rel="stylesheet" href="/arquivos/styles/forgot-my-password.css">
 </head>
@@ -20,7 +20,8 @@
 		</div>
 	</div>
   <footer class="footer">
-  	<?php require_once("../common/scripts-footer.php");  ?>
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="/arquivos/scripts/vendor/bootstrap.js"></script>
   </footer>
 </body>
 </html>

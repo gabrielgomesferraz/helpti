@@ -4,6 +4,8 @@
   # Página de login
   RewriteRule ^cadastro/?$ /build/pages/register/index.php [NC,L]
   RewriteRule ^login/?$ /build/pages/login/index.php [NC,L]
+  RewriteRule ^departamentos/?$ /build/pages/departments/index.php [NC,L]
+  RewriteRule ^departamentos/cadastrar?$ /build/pages/departments/create/index.php [NC,L]
   RewriteRule ^esqueci-minha-senha/?$ /build/pages/forgot-my-password/index.php [NC,L]
   RewriteRule ^criar-chamado/?$ /build/pages/create/index.php [NC,L]
   RewriteRule ^/?$ /build/pages/index.php [NC,L]

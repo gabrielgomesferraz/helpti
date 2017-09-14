@@ -2,11 +2,11 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>HelpTI - Cadastro de Chamados</title>
+	<title>HelpTI - Lista de Departamentos</title>
 	<link rel="stylesheet" href="/arquivos/styles/helpti.css">
-	<link rel="stylesheet" href="/arquivos/styles/create.css">
+	<link rel="stylesheet" href="/arquivos/styles/departments.css">
 </head>
-<body class="create">
+<body class="departments">
     <div class="container-fluid">
 		<div class="row">
 			<nav class="navbar navbar-default">
@@ -46,28 +46,48 @@
 			  </div><!-- /.container-fluid -->
 			</nav>
 
-			<div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-6 col-md-offset-3">
-				<div class="list-content-create">
-					<form class="form-register">
-						<div class="form-group">
-							<h3 class="title-called">Solicitar</h3>
-						</div>
-						<div class="form-group">
-					    	<input type="title-called" class="form-control input-lg" id="title-clled" aria-describedby="titleCalledHelp" placeholder="Titulo">
-						</div>
-						<div class="form-group">
-				    		<select class="form-control input-lg" id="department" name="department">
-				    			<option value="-1">Selecione um departamento</option>
-						    	<option>Marketing</option>
-						    	<option>Comercial</option>
-						    	<option>Financeiro</option>
-							</select>
-					  	</div>
-					  	<div class="form-group">
-					  		<textarea class="form-control" rows="5" id="description" placeholder="Descreva o problema."></textarea>
-					  	</div>
-					  	<button type="submit" class="btn btn-primary btn-lg btn-send">Enviar chamado</button>
-					</form>
+			<div class="col-xs-12 col-sm-8 col-sm-offset-2">
+				<div class="list-content-departments">						
+					<div class="form-group">
+						<h3 class="title-list-called">Lista de Departamentos</h3>
+					</div>
+					<div class="table-responsive">
+						<table class="table table-bordered">
+							<thead> 
+								<tr> 
+									<th>#</th> 
+									<th>Nome</th>
+									<th>Data de Atualização</th>
+									<th>Editar</th>
+									<th>Excluir</th>
+								</tr> 
+							</thead> 
+							<tbody> 
+								<tr> 
+									<th scope="row">1</th> 
+									<td>Marketing</td> 
+									<td>13/09/2017</td>
+									<td><a class="editar" href=""><span class="glyphicon glyphicon-edit"></span></a></td>
+									<td><a class="remover" href=""><span class="glyphicon glyphicon-remove"></span></a></td>
+								</tr> 
+								<tr> 
+									<th scope="row">2</th>
+									<td>Financeiro</td>
+									<td>13/09/2017</td>
+									<td><a class="editar" href=""><span class="glyphicon glyphicon-edit"></span></a></td>
+									<td><a class="remover" href=""><span class="glyphicon glyphicon-remove"></span></a></td>
+								</tr> 
+								<tr> 
+									<th scope="row">3</th> 
+									<td>Comercial</td> 
+									<td>13/09/2017</td>
+									<td><a class="editar" href=""><span class="glyphicon glyphicon-edit"></span></a></td>
+									<td><a class="remover" href=""><span class="glyphicon glyphicon-remove"></span></a></td>
+								</tr>
+							</tbody> 
+						</table>
+					</div>
+					<a href="/departamentos/cadastrar" class="btn btn-primary btn-lg btn-block create-called">Cadastrar departmento</a>
 				</div>
 			</div>
 		</div>

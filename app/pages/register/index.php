@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Cadastro</title>
+	<title>HelpTI - Cadastro de Usuário</title>
 	<link rel="stylesheet" href="/arquivos/styles/helpti.css">
 	<link rel="stylesheet" href="/arquivos/styles/register.css">
 </head>
@@ -31,7 +31,8 @@
 		</div>
 	</div>
   <footer class="footer">
-  	<?php require_once("../common/scripts-footer.php");  ?>
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="/arquivos/scripts/vendor/bootstrap.js"></script>
   </footer>
 </body>
 </html>

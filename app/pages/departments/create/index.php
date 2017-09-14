@@ -2,14 +2,14 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>HelpTI - Cadastro de Chamados</title>
+	<title>HelpTI - Cadastro de Departamentos</title>
 	<link rel="stylesheet" href="/arquivos/styles/helpti.css">
-	<link rel="stylesheet" href="/arquivos/styles/create.css">
+	<link rel="stylesheet" href="/arquivos/styles/departments.css">
 </head>
-<body class="create">
+<body class="departments">
     <div class="container-fluid">
-		<div class="row">
-			<nav class="navbar navbar-default">
+      	<div class="row">
+      		<nav class="navbar navbar-default">
 			  <div class="container-fluid">
 			    <!-- Brand and toggle get grouped for better mobile display -->
 			    <div class="navbar-header">
@@ -45,35 +45,15 @@
 			    </div><!-- /.navbar-collapse -->
 			  </div><!-- /.container-fluid -->
 			</nav>
-
-			<div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-6 col-md-offset-3">
-				<div class="list-content-create">
-					<form class="form-register">
-						<div class="form-group">
-							<h3 class="title-called">Solicitar</h3>
-						</div>
-						<div class="form-group">
-					    	<input type="title-called" class="form-control input-lg" id="title-clled" aria-describedby="titleCalledHelp" placeholder="Titulo">
-						</div>
-						<div class="form-group">
-				    		<select class="form-control input-lg" id="department" name="department">
-				    			<option value="-1">Selecione um departamento</option>
-						    	<option>Marketing</option>
-						    	<option>Comercial</option>
-						    	<option>Financeiro</option>
-							</select>
-					  	</div>
-					  	<div class="form-group">
-					  		<textarea class="form-control" rows="5" id="description" placeholder="Descreva o problema."></textarea>
-					  	</div>
-					  	<button type="submit" class="btn btn-primary btn-lg btn-send">Enviar chamado</button>
-					</form>
-				</div>
-			</div>
+	      	<form class="form-department col-xs-12 col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4">
+	      	  <label for="" class="title-login">Cadastrar Departamento</label>
+			  <div class="form-group">
+			    <input type="text" class="form-control input-lg" id="departament" name="departament" aria-describedby="departamentHelp" placeholder="Digite o nome do departamento" required>
+			  </div>
+			  <button type="submit" class="btn btn-primary btn-lg btn-block">Cadastrar</button>
+			</form>
 		</div>
 	</div>
-
-
   <footer class="footer">
   	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<script src="/arquivos/scripts/vendor/bootstrap.js"></script>
