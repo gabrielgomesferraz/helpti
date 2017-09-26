@@ -11,7 +11,7 @@
 
   $.fn.login = (function() {
 
-    var form = $('#register-form');
+    var form = $('#login-form');
 
     var validationForm = function() {
       $(form).validate({
@@ -69,14 +69,15 @@
         $('#login-msg-error').hide().removeClass('hidden').fadeIn('fast');
       })
       .always(function(){
-        $('#send-register').text('Login').prop('disabled', false);
+        $('#send-login').text('Login').prop('disabled', false);
       })
       .done(function(data) {
-        $('html, body').animate({ scrollTop: 0 }, 'slow', function() {
-          window.location="/login"; 
-          $('#register-msg-success').hide().removeClass('hidden').fadeIn('fast');
-          $('#register-form')[0].reset();
-        });
+        window.location="/login"; 
+        // $('html, body').animate({ scrollTop: 0 }, 'slow', function() {
+          
+        //   $('#login-msg-success').hide().removeClass('hidden').fadeIn('fast');
+        //   $('#register-form')[0].reset();
+        // });
       });
 
     };
