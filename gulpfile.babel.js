@@ -209,7 +209,7 @@ gulp.task('serve', ['default'], () => {
   // Application
   gulp.watch(['app/**/*.php'], ['php', reload]);
   gulp.watch(['app/assets/styles/**/*.{scss,css}'], ['styles', reload]);
-  gulp.watch(['app/assets/scripts/scripts/**/*.js'], ['scripts', 'common-scripts', 'jshint', reload]);
+  gulp.watch(['app/assets/scripts/pages/**/*.js'], ['scripts', 'common-scripts', 'jshint', reload]);
   gulp.watch(['app/assets/images/**/*'], ['images', reload]);
   gulp.watch(['app/assets/images/**/*'], ['svg', reload]);
 

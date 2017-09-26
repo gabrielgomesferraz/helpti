@@ -1,6 +1,6 @@
 /*
- *  Register v1.0.0
- *  Register
+ *  Login v1.0.0
+ *  Login
  *  Made with ♥ by Gabriel Henrique Gomes Ferraz <gabrielgomes639@gmail.com>
  *  Under MIT License
  */
@@ -9,7 +9,7 @@
 
   'use strict';
 
-  $.fn.register = (function() {
+  $.fn.login = (function() {
 
     var form = $('#register-form');
 
@@ -18,14 +18,6 @@
         errorElement : 'p',
         errorClass : 'help-block',
         rules: {
-          firstName: {
-            required: true,
-            minlength: 2
-          },
-          lastName: {
-            required: true,
-            minlength: 2
-          },
           email: {
             required: true,
             email: true
@@ -36,14 +28,6 @@
           }
         },
         messages : {
-          firstName : {
-            required: 'NOME OBRIGATÓRIO',
-            minlength: 'NOME DEVE CONTER NO MÍNIMO 2 CARACTERES'
-          },
-          lastName : {
-            required: 'SOBRENOME OBRIGATÓRIO',
-            minlength: 'SOBRENOME DEVE CONTER NO MÍNIMO 2 CARACTERES'
-          },
           email : {
             required: 'EMAIL OBRIGATÓRIO',
             email: 'EMAIL INVÁLIDO'
@@ -74,21 +58,22 @@
 
       $.ajax({
         type: 'POST',
-        url: '/build/pages/register/src/RegisterController.php',
+        url: '/build/pages/login/src/login.php',
         data: data,
         async: true,
         beforeSend: function(xhr) {
-          $('#send-register').text('Aguarde...').prop('disabled', true);
+          $('#send-login').text('Aguarde...').prop('disabled', true);
         }
       })
       .fail(function(data) {
-        $('#register-msg-error').hide().removeClass('hidden').fadeIn('fast');
+        $('#login-msg-error').hide().removeClass('hidden').fadeIn('fast');
       })
       .always(function(){
-        $('#send-register').text('Cadastrar').prop('disabled', false);
+        $('#send-register').text('Login').prop('disabled', false);
       })
       .done(function(data) {
         $('html, body').animate({ scrollTop: 0 }, 'slow', function() {
+          window.location="/login"; 
           $('#register-msg-success').hide().removeClass('hidden').fadeIn('fast');
           $('#register-form')[0].reset();
         });
@@ -106,7 +91,7 @@
 
   })();
 
-  $.fn.register.init();
+  $.fn.login.init();
 
 
 })(window.jQuery, window, document);
