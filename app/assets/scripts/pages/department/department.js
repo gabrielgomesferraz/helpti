@@ -1,6 +1,6 @@
 /*
- *  Login v1.0.0
- *  Login
+ *  Register v1.0.0
+ *  Register
  *  Made with ♥ by Gabriel Henrique Gomes Ferraz <gabrielgomes639@gmail.com>
  *  Under MIT License
  */
@@ -9,33 +9,25 @@
 
   'use strict';
 
-  $.fn.login = (function() {
+  $.fn.department = (function() {
 
-    var form = $('#login-form');
+    var form = $('#department-form');
 
     var validationForm = function() {
       $(form).validate({
         errorElement : 'p',
         errorClass : 'help-block',
         rules: {
-          email: {
+          name: {
             required: true,
-            email: true
+            minlength: 2
           },
-          password: {
-            required: true,
-            minlength: 6
-          }
         },
         messages : {
-          email : {
-            required: 'EMAIL OBRIGATÓRIO',
-            email: 'EMAIL INVÁLIDO'
+          name : {
+            required: 'NOME DO DEPARTAMENTO OBRIGATÓRIO',
+            minlength: 'NOME DO DEPARTAMENTO DEVE CONTER NO MÍNIMO 2 CARACTERES'
           },
-          password : {
-          	required: 'SENHA OBRIGATÓRIO',
-            minlength: 'SENHA DEVE CONTER NO MÍNIMO 6 CARACTERES'
-          }
         },
         highlight: function (element, errorClass, validClass) {
           $(element).closest('.form-group').addClass('has-error');
@@ -52,39 +44,35 @@
       });
     };
 
+    var listDepartment = function() {
+      var listDepartment = $('.list-content-departments tbody');
+
+    };
+
     var sendForm = function(form) {
       var data = $(form).serialize();
 
       $.ajax({
         type: 'POST',
-        url: '/build/pages/login/src/LoginController.php',
+        url: '/build/pages/departments/create/src/CreateDepartmentController.php',
         data: data,
         async: true,
         beforeSend: function(xhr) {
-          $('#send-login').text('Aguarde...').prop('disabled', true);
+          $('#send-department').text('Aguarde...').prop('disabled', true);
         }
       })
       .fail(function(data) {
-        console.log('entrou no fail');
-        console.log(data);
-        $('#login-msg-error').hide().removeClass('hidden').fadeIn('fast');
+        $('#department-msg-error').hide().removeClass('hidden').fadeIn('fast');
       })
       .always(function(){
-        $('#send-login').text('Login').prop('disabled', false);
+        $('#send-department').text('Cadastrar').prop('disabled', false);
       })
       .done(function(data) {
-        console.log(data);
 
-        if(data == 0) {
-          $('#login-msg-error-empty').hide().removeClass('hidden').fadeIn('fast');
-        } else {
-          $('#login-msg-error-empty').hide().addClass('hidden');
-          window.location="/";
-        }
+        console.log(data);
         // $('html, body').animate({ scrollTop: 0 }, 'slow', function() {
-          
-        //   $('#login-msg-success').hide().removeClass('hidden').fadeIn('fast');
-        //   $('#register-form')[0].reset();
+        //   $('#department-msg-success').hide().removeClass('hidden').fadeIn('fast');
+        //   $('#department-form')[0].reset();
         // });
       });
 
@@ -100,7 +88,7 @@
 
   })();
 
-  $.fn.login.init();
+  $.fn.department.init();
 
 
 })(window.jQuery, window, document);

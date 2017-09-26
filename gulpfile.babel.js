@@ -183,9 +183,6 @@ gulp.task('php', function() {
     'app/**/*.php'
   ])
   .pipe(gulp.dest('build'))
-  .pipe(reload({
-    stream: true
-  }));
 });
 
 // Clean output directory
@@ -209,7 +206,7 @@ gulp.task('serve', ['default'], () => {
   // Application
   gulp.watch(['app/**/*.php'], ['php', reload]);
   gulp.watch(['app/assets/styles/**/*.{scss,css}'], ['styles', reload]);
-  gulp.watch(['app/assets/scripts/pages/**/*.js'], ['scripts', 'common-scripts', 'jshint', reload]);
+  gulp.watch(['app/assets/scripts/pages/**/*.js'], ['scripts', reload]);
   gulp.watch(['app/assets/images/**/*'], ['images', reload]);
   gulp.watch(['app/assets/images/**/*'], ['svg', reload]);
 

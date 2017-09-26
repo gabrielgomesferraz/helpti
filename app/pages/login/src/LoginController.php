@@ -6,20 +6,19 @@
 	$email = $_REQUEST['email'];
 
 
-	$sql ="SELECT * FROM user WHERE `email` = $email AND `token` = $token";
+	$sql ="SELECT * FROM user WHERE email = '$email' AND token = '$token' ";
 
-	$result = mysql_query($sql)
+	$result = mysql_query($sql);
 
-	if (mysqli_num_rows($result) > 0) {
-	    while($row = mysqli_fetch_assoc($result)) {
-	        echo $row["firstname"];
-
-        	$name = "helpti";
-			$value = "Cookie Criado com Sucesso";
-			$date = time() + 3600;
-			setcookie($name, $value, $date);
-	    }
+	if (mysql_num_rows($result) > 0) {
+		$cookie_name_user = "helptiuser";
+		$cookie_value_user = "$email";
+		$cookie_name_pass = "helptitoken";
+		$cookie_value_pass = "$token";
+		setcookie($cookie_name_user, $cookie_value_user, time() + (86400 * 30), "/"); // 86400 = 1 day
+		setcookie($cookie_name_pass, $cookie_value_pass, time() + (86400 * 30), "/"); // 86400 = 1 day
+		echo mysql_num_rows($result);
 	} else {
-	    echo "0";
+		echo '0';
 	}
 ?>

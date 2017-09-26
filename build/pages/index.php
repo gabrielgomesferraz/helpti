@@ -1,5 +1,9 @@
+<?php
+	include('../pages/common/session.php');
+?>
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
 	<meta charset="UTF-8">
 	<title>HelpTI</title>

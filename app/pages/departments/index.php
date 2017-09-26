@@ -1,3 +1,7 @@
+<?php
+	include('../common/session.php');
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -57,33 +61,19 @@
 								<tr> 
 									<th>#</th> 
 									<th>Nome</th>
+									<th>Departamento</th>
 									<th>Data de Atualização</th>
 									<th>Editar</th>
-									<th>Excluir</th>
 								</tr> 
 							</thead> 
 							<tbody> 
-								<tr> 
+<!-- 								<tr> 
 									<th scope="row">1</th> 
 									<td>Marketing</td> 
 									<td>13/09/2017</td>
 									<td><a class="editar" href=""><span class="glyphicon glyphicon-edit"></span></a></td>
 									<td><a class="remover" href=""><span class="glyphicon glyphicon-remove"></span></a></td>
-								</tr> 
-								<tr> 
-									<th scope="row">2</th>
-									<td>Financeiro</td>
-									<td>13/09/2017</td>
-									<td><a class="editar" href=""><span class="glyphicon glyphicon-edit"></span></a></td>
-									<td><a class="remover" href=""><span class="glyphicon glyphicon-remove"></span></a></td>
-								</tr> 
-								<tr> 
-									<th scope="row">3</th> 
-									<td>Comercial</td> 
-									<td>13/09/2017</td>
-									<td><a class="editar" href=""><span class="glyphicon glyphicon-edit"></span></a></td>
-									<td><a class="remover" href=""><span class="glyphicon glyphicon-remove"></span></a></td>
-								</tr>
+								</tr>  -->
 							</tbody> 
 						</table>
 					</div>
@@ -97,6 +87,8 @@
   <footer class="footer">
   	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<script src="/arquivos/scripts/vendor/bootstrap.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.17.0/dist/jquery.validate.js"></script>
+	<script src="/arquivos/scripts/department.js"></script>
   </footer>
 </body>
 </html>

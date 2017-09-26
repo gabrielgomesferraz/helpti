@@ -1,3 +1,8 @@
+<?php
+	// define('__ROOT__', dirname(__FILE__));
+	include("../common/session.php");
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>

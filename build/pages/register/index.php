@@ -17,7 +17,7 @@
                 Cadastro efetuado com sucesso, <a class="goto-login" href="/login">fazer login</a>
               </div>
 
-              <div id="register-msg-error" class="alert alert-warning hidden" role="alert">
+              <div id="register-msg-error" class="alert alert-danger hidden" role="alert">
                 Erro ao efetuar seu cadastro.
               </div>
               <!-- messages -->
