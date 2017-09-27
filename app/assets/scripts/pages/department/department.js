@@ -1,6 +1,6 @@
 /*
- *  Register v1.0.0
- *  Register
+ *  Department v1.0.0
+ *  Department
  *  Made with ♥ by Gabriel Henrique Gomes Ferraz <gabrielgomes639@gmail.com>
  *  Under MIT License
  */
@@ -45,8 +45,68 @@
     };
 
     var listDepartment = function() {
-      var listDepartment = $('.list-content-departments tbody');
+      var listDepartment = $('.list-content-departments tbody'),
+          departmentsArray = [];
 
+
+        $.ajax({
+          type: 'GET',
+          url: '/build/pages/departments/src/DepartmentsController.php',
+          data: {
+            action: "getDepartments",
+          },
+          async: true,
+          dataType: "json",
+        })
+        .fail(function(data) {
+          $('#department-msg-error').hide().removeClass('hidden').fadeIn('fast');
+        })
+        .always(function(){
+        })
+        .done(function(data) {
+          console.log(data);
+
+          if(data.length) {
+            for(var i = 0; i < data.length; i++) {
+              departmentsArray.push(
+                '<tr><td>'+data[i].name+'</td><td><a class="editar" href="/editar?='+data[i].id+'"><span class="glyphicon glyphicon-edit"></span></a></td><td><a class="remover" data-value="'+data[i].id+'" href="#"><span class="glyphicon glyphicon-remove"></span></a></td></tr>'
+              );
+            }
+
+            listDepartment.find('tr').remove();
+            listDepartment.append(departmentsArray);
+            removeDepartment();
+          }
+        });
+    };
+
+    var removeDepartment = function() {
+        var remover = $('.remover');
+
+        remover.click(function() {
+          
+          $.ajax({
+            type: 'POST',
+            url: '/build/pages/departments/src/DepartmentsController.php',
+            data: {
+              action: "removeDepartment",
+              departmentId: $(this).attr('data-value'),
+            },
+            async: true,
+            dataType: "json",
+          })
+          .fail(function(data) {
+            $('#department-msg-error').hide().removeClass('hidden').fadeIn('fast');
+          })
+          .always(function(){
+          })
+          .done(function(data) {
+            listDepartment();
+            $('html, body').animate({ scrollTop: 0 }, 'slow', function() {
+              $('#remove-department-msg-success').hide().removeClass('hidden').fadeIn('fast');
+            });
+          });
+        });
     };
 
     var sendForm = function(form) {
@@ -68,18 +128,17 @@
         $('#send-department').text('Cadastrar').prop('disabled', false);
       })
       .done(function(data) {
-
-        console.log(data);
-        // $('html, body').animate({ scrollTop: 0 }, 'slow', function() {
-        //   $('#department-msg-success').hide().removeClass('hidden').fadeIn('fast');
-        //   $('#department-form')[0].reset();
-        // });
+        $('html, body').animate({ scrollTop: 0 }, 'slow', function() {
+          $('#department-msg-success').hide().removeClass('hidden').fadeIn('fast');
+          $('#department-form')[0].reset();
+        });
       });
 
     };
 
     var init = function() {
       validationForm();
+      listDepartment();
     };
 
     return {

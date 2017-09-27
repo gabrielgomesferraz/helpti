@@ -12,7 +12,7 @@
       		<h1 class="title-helpti text-center">HelpTI</h1>
 	      	<form id="register-form" class="form-register col-xs-12 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
 
-	      		              <!-- messages -->
+	      	   <!-- messages -->
               <div id="register-msg-success" class="alert alert-success hidden" role="alert">
                 Cadastro efetuado com sucesso, <a class="goto-login" href="/login">fazer login</a>
               </div>
