@@ -7,6 +7,10 @@
     if(session > 0) {
     	$('.department-nav').removeClass('hidden');
     }
+
+    if(session > 1) {
+    	$('.user-nav').removeClass('hidden');
+    }
     
 	$('#logout').click(function(e) {
 

@@ -16,6 +16,7 @@
       <ul class="nav navbar-nav">
         <li><a href="/">Chamados <span class="sr-only">(current)</span></a></li>
         <li><a class="department-nav hidden" href="/departamentos">Departamentos <span class="sr-only">(current)</span></a></li>
+        <li><a class="user-nav hidden" href="/usuarios">Usuários <span class="sr-only">(current)</span></a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
 <!--         <li class="dropdown">

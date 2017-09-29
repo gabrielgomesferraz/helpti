@@ -11,4 +11,5 @@
   RewriteRule ^alterar-dados/?$ /build/pages/change-data/index.php [NC,L]
   RewriteRule ^/?$ /build/pages/called/index.php [NC,L]
   RewriteRule ^editar?$ /build/pages/called/edit/index.php [NC,L]
+  RewriteRule ^usuarios?$ /build/pages/users/index.php [NC,L]
 </IfModule>
