@@ -96,8 +96,6 @@
         .always(function(){
         })
         .done(function(data) {
-          console.log(data);
-
           if(data.length) {
             for(var i = 0; i < data.length; i++) {
               departmentsArray.push(
@@ -189,7 +187,6 @@
         $('#edit-department').text('Editar').prop('disabled', false);
       })
       .done(function(data) {
-        console.log(data);
         $('html, body').animate({ scrollTop: 0 }, 'slow', function() {
           $('#department-edit-msg-success').hide().removeClass('hidden').fadeIn('fast');
           $('#department-edit-form')[0].reset();

@@ -1,6 +1,4 @@
-<?php
-    include('../../common/session.php');
-?>
+<div class="hidden session"><?php include('../../common/session.php'); ?></div>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -34,8 +32,7 @@
 		</div>
 	</div>
   <footer class="footer">
-  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-	<script src="/arquivos/scripts/vendor/bootstrap.js"></script>
+  	<?php include('../../common/scripts-footer.php'); ?>
 	<script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.17.0/dist/jquery.validate.js"></script>
 	<script src="/arquivos/scripts/department.js"></script>
   </footer>

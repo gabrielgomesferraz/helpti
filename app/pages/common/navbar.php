@@ -15,20 +15,20 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
         <li><a href="/">Chamados <span class="sr-only">(current)</span></a></li>
-        <li><a href="/departamentos">Departamentos <span class="sr-only">(current)</span></a></li>
+        <li><a class="department-nav hidden" href="/departamentos">Departamentos <span class="sr-only">(current)</span></a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li class="dropdown">
+<!--         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-bell"></span> Notificações <span class="caret"></span></a>
           <ul class="dropdown-menu">
             <li><a href="#">Test</a></li>
           </ul>
-        </li>
+        </li> -->
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-user"></span> Minha conta <span class="caret"></span></a>
           <ul class="dropdown-menu">
             <li><a href="#">Alterar dados</a></li>
-            <li><a href="#">Sair</a></li>
+            <li><a href="" id="logout">Sair</a></li>
           </ul>
         </li>
       </ul>

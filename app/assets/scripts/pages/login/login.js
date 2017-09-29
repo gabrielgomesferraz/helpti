@@ -65,16 +65,12 @@
         }
       })
       .fail(function(data) {
-        console.log('entrou no fail');
-        console.log(data);
         $('#login-msg-error').hide().removeClass('hidden').fadeIn('fast');
       })
       .always(function(){
         $('#send-login').text('Login').prop('disabled', false);
       })
       .done(function(data) {
-        console.log(data);
-
         if(data == 0) {
           $('#login-msg-error-empty').hide().removeClass('hidden').fadeIn('fast');
         } else {

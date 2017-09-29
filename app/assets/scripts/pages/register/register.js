@@ -70,8 +70,7 @@
 
     var sendForm = function(form) {
       var data = $(form).serialize();
-      console.log(data);
-
+      
       $.ajax({
         type: 'POST',
         url: '/build/pages/register/src/RegisterController.php',

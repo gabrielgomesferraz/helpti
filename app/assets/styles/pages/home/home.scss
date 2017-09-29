@@ -23,8 +23,12 @@
 		border-bottom: 1px solid #eee;
 	}
 
-	.editar, .remover {
-		display: block;
+	.table-bordered>thead>tr>th {
+		vertical-align: middle;
+	}
+
+	.table-bordered>tbody>tr>td {
+		vertical-align: middle;
 	}
 
 }
