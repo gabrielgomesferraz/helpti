@@ -21,7 +21,6 @@
 		echo json_encode($data);
 	} else {
 
-		echo $departmentId;
 		$data = array();
 		$sql ="UPDATE department SET name = '$name' WHERE id = $departmentId" ;
 

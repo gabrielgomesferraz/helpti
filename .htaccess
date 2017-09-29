@@ -8,6 +8,7 @@
   RewriteRule ^departamentos/editar?$ /build/pages/departments/edit/index.php [NC,L]
   RewriteRule ^esqueci-minha-senha/?$ /build/pages/forgot-my-password/index.php [NC,L]
   RewriteRule ^criar-chamado/?$ /build/pages/called/create/index.php [NC,L]
+  RewriteRule ^alterar-dados/?$ /build/pages/change-data/index.php [NC,L]
   RewriteRule ^/?$ /build/pages/called/index.php [NC,L]
   RewriteRule ^editar?$ /build/pages/called/edit/index.php [NC,L]
 </IfModule>

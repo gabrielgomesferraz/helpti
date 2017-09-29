@@ -11,7 +11,8 @@
 
   $.fn.called = (function() {
 
-    var url = document.location.href,
+    var formEdit = $('#called-edit-form'),
+        url = document.location.href,
         urlEditar = url.substring(url.indexOf('=') + 1);
 
     // var form = $('#called-form'),
@@ -19,37 +20,36 @@
     //     url = document.location.href,
     //     urlEditar = url.substring(url.indexOf('=') + 1);
 
-    // var validationForm = function() {
-
-    //   $(formEdit).validate({
-    //     errorElement : 'p',
-    //     errorClass : 'help-block',
-    //     rules: {
-    //       name: {
-    //         required: true,
-    //         minlength: 2
-    //       },
-    //     },
-    //     messages : {
-    //       name : {
-    //         required: 'NOME DO DEPARTAMENTO OBRIGATÓRIO',
-    //         minlength: 'NOME DO DEPARTAMENTO DEVE CONTER NO MÍNIMO 2 CARACTERES'
-    //       },
-    //     },
-    //     highlight: function (element, errorClass, validClass) {
-    //       $(element).closest('.form-group').addClass('has-error');
-    //     },
-    //     unhighlight: function (element, errorClass, validClass) {
-    //       $(element).closest('.form-group').removeClass('has-error');
-    //     },
-    //     errorPlacement: function(error, element) {
-    //       error.insertAfter(element);
-    //     },
-    //     submitHandler: function (form) {
-    //       sendFormEdit(formEdit);
-    //     }
-    //   });
-    // };
+    var validationForm = function() {
+      if(url.match(/editar/gi)) {
+        $(formEdit).validate({
+          errorElement : 'p',
+          errorClass : 'help-block',
+          rules: {
+            status: {
+              required: true,
+            },
+          },
+          messages : {
+            status : {
+              required: 'SITUAÇÃO DO CHAMADO É OBRIGATÓRIO',
+            },
+          },
+          highlight: function (element, errorClass, validClass) {
+            $(element).closest('.form-group').addClass('has-error');
+          },
+          unhighlight: function (element, errorClass, validClass) {
+            $(element).closest('.form-group').removeClass('has-error');
+          },
+          errorPlacement: function(error, element) {
+            error.insertAfter(element);
+          },
+          submitHandler: function (form) {
+            sendFormEdit(formEdit);
+          }
+        });
+      }
+    };
 
     var listCalled = function() {
       var listCalleds = $('.list-content-home tbody'),
@@ -107,7 +107,13 @@
     };
 
     var getCalledEdit = function() {
-      // var editName = $('#called-edit-form').find('#name');
+         var titleCalled = $('#title-clled'),
+             department  = $('#department'),
+             calledId = $('#calledId'),
+             status = $('#status'),
+             textStatus = '',
+             description = $('#description'),
+             mensagem = $('#mensagem');
 
 
         if(url.match(/editar/gi)) {
@@ -128,46 +134,57 @@
           })
           .done(function(data) {
             console.log(data);
-            // editName.val(data[0].name);
-            // $('#departmentId').val(data[0].id);
+
+            if(Number(data[0].status) === 0) {
+              textStatus = 'Aberto';
+            } else if (Number(data[0].status) === 1) {
+              textStatus = 'Em andamento';
+            } else {
+              textStatus = 'Finalizado';
+            } 
+
+            $('.help-for').text('Solicitado por: '+ data[0].user_email);
+            calledId.val(data[0].id);
+            titleCalled.val(data[0].title);
+            description.val(data[0].description);
+            mensagem.val(data[0].mensagem);
+            department.append('<option value="'+Number(data[0].department_id)+'">'+data[0].department_name+'</option>');
+            status.val(data[0].status);
           });
         }
     };
 
 
-    // var sendFormEdit = function(formEdit) {
-    //   var data = $(formEdit).serialize();
+    var sendFormEdit = function(formEdit) {
+      var data = $(formEdit).serialize();
 
-    //   $.ajax({
-    //     type: 'POST',
-    //     url: '/build/pages/departments/edit/src/EditDepartmentController.php',
-    //     data: data,
-    //     async: true,
-    //     beforeSend: function(xhr) {
-    //       $('#edit-department').text('Aguarde...').prop('disabled', true);
-    //     }
-    //   })
-    //   .fail(function(data) {
-    //     $('#department-edit-msg-error').hide().removeClass('hidden').fadeIn('fast');
-    //   })
-    //   .always(function(){
-    //     $('#edit-department').text('Editar').prop('disabled', false);
-    //   })
-    //   .done(function(data) {
-    //     console.log(data);
-    //     $('html, body').animate({ scrollTop: 0 }, 'slow', function() {
-    //       $('#department-edit-msg-success').hide().removeClass('hidden').fadeIn('fast');
-    //       $('#department-edit-form')[0].reset();
-    //     });
-    //   });
+      $.ajax({
+        type: 'POST',
+        url: '/build/pages/called/edit/src/EditCalledController.php',
+        data: data,
+        async: true,
+        beforeSend: function(xhr) {
+          $('#send-update-called').text('Aguarde...').prop('disabled', true);
+        }
+      })
+      .fail(function(data) {
+        $('#called-edit-msg-error').hide().removeClass('hidden').fadeIn('fast');
+      })
+      .always(function(){
+        $('#send-update-called').text('Editar').prop('disabled', false);
+      })
+      .done(function(data) {
+        $('html, body').animate({ scrollTop: 0 }, 'slow', function() {
+          $('#called-edit-msg-success').hide().removeClass('hidden').fadeIn('fast');
+        });
+      });
 
-    // };
+    };
 
     var init = function() {
-      // validationForm();
+      validationForm();
       getCalledEdit();
       listCalled();
-      // getDepartamentEdit();
     };
 
     return {

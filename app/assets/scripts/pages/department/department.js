@@ -189,7 +189,6 @@
       .done(function(data) {
         $('html, body').animate({ scrollTop: 0 }, 'slow', function() {
           $('#department-edit-msg-success').hide().removeClass('hidden').fadeIn('fast');
-          $('#department-edit-form')[0].reset();
         });
       });
 

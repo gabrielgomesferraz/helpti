@@ -27,7 +27,7 @@
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-user"></span> Minha conta <span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li><a href="#">Alterar dados</a></li>
+            <li><a href="/alterar-dados">Alterar dados</a></li>
             <li><a href="" id="logout">Sair</a></li>
           </ul>
         </li>

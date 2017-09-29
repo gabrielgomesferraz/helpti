@@ -1,7 +1,7 @@
-<div class="hidden session"><?php include("../common/session.php"); ?></div>
+<div class="hidden session"><?php include("../../common/session.php"); ?></div>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
 	<meta charset="UTF-8">
 	<title>HelpTI - Cadastro de Chamados</title>

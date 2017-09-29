@@ -4,11 +4,26 @@
 
 	$action = $_REQUEST['action'];
 	$calledId = $_REQUEST['calledId'];
+	$status = $_REQUEST['status'];
+	$mensagem = $_REQUEST['mensagem'];
+
 
 	if($action == "getCalledEdit") {
 
 		$data = array();
-		$sql ="SELECT id,title,description,department_id,status FROM called WHERE id = $calledId" ;
+		$sql ="SELECT 
+				called.id,
+				called.title,
+				called.description,
+				called.department_id,
+				called.status,
+				called.progress_called mensagem,
+				user.email user_email,
+				department.name department_name
+			   	FROM called 
+			   INNER JOIN user ON called.createdby = user.id
+			   INNER JOIN department ON called.department_id = department.id
+			   WHERE called.id = $calledId";
 
 		$result = mysql_query($sql);
 
@@ -19,14 +34,9 @@
 
 		echo json_encode($data);
 	} else {
-
-		echo $departmentId;
-		$data = array();
-		$sql ="UPDATE department SET name = '$name' WHERE id = $departmentId" ;
+		$sql ="UPDATE called SET status = '$status', progress_called = '$mensagem' WHERE id = $calledId" ;
 
 		$result = mysql_query($sql);
-
-		// echo json_encode(200);
 	}
 
 ?>
